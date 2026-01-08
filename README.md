@@ -5,7 +5,20 @@ A modern, smooth, and efficient Chrome extension that converts your voice to tex
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## 📸 Screenshots
+
+## Features
+
+- **Real-time Voice Recognition** - See your words appear instantly as you speak
+- **Multi-language Support** - 15+ languages including English, Spanish, French, German, Arabic, Bengali, Hindi, and more
+- **Language Preference Memory** - Your selected language is saved automatically
+- **Quick Copy** - One-click copy to clipboard
+- **Modern UI** - Beautiful gradient design with smooth animations
+- **Continuous Recording** - Auto-restarts recognition for uninterrupted dictation
+- **Popup & Overlay Modes** - Use in popup window or floating overlay on any webpage
+- **Optimized Performance** - Smooth text streaming without lag
+
+
+## Screenshots
 
 ### Main Interface
 
@@ -20,16 +33,6 @@ A modern, smooth, and efficient Chrome extension that converts your voice to tex
 
 ![Overlay Mode](speach-to-text/screenshots/overlay-mode.png)
 
-## ✨ Features
-
-- **Real-time Voice Recognition** - See your words appear instantly as you speak
-- **Multi-language Support** - 15+ languages including English, Spanish, French, German, Arabic, Bengali, Hindi, and more
-- **Language Preference Memory** - Your selected language is saved automatically
-- **Quick Copy** - One-click copy to clipboard
-- **Modern UI** - Beautiful gradient design with smooth animations
-- **Continuous Recording** - Auto-restarts recognition for uninterrupted dictation
-- **Popup & Overlay Modes** - Use in popup window or floating overlay on any webpage
-- **Optimized Performance** - Smooth text streaming without lag
 
 ## Installation
 
