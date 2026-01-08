@@ -9,16 +9,16 @@ A modern, smooth, and efficient Chrome extension that converts your voice to tex
 
 ### Main Interface
 
-![Popup UI](screenshots/popup-ui.png)
+![Popup UI](speach-to-text/screenshots/popup-ui.png)
 
 ### Language Selection
 
-![Language Selection](screenshots/language-selection.png)
+![Language Selection](speach-to-text/screenshots/language-selection.png)
 
 
 ### Overlay Mode
 
-![Overlay Mode](screenshots/overlay-mode.png)
+![Overlay Mode](speach-to-text/screenshots/overlay-mode.png)
 
 ## ✨ Features
 
