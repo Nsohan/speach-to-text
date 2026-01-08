@@ -5,6 +5,21 @@ A modern, smooth, and efficient Chrome extension that converts your voice to tex
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## 📸 Screenshots
+
+### Main Interface
+
+![Popup UI](screenshots/popup-ui.png)
+
+### Language Selection
+
+![Language Selection](screenshots/language-selection.png)
+
+
+### Overlay Mode
+
+![Overlay Mode](screenshots/overlay-mode.png)
+
 ## ✨ Features
 
 - 🎯 **Real-time Voice Recognition** - See your words appear instantly as you speak
@@ -232,7 +247,7 @@ SOFTWARE.
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Nh Sohan**
 
 - GitHub: [@Nsohan](https://github.com/Nsohan)
 - Email: your.email@example.com
@@ -249,7 +264,7 @@ If you encounter any issues or have questions:
 
 1. Check the [Issues](https://github.com/Nsohan/speach-to-text) page
 2. Create a new issue with detailed description
-3. Contact: your.email@example.com
+3. Contact: nhsohan3@gmail.com
 
 ---
 
