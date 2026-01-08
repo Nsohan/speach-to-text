@@ -1,4 +1,4 @@
-# 🎤 Voice to Text Converter - Chrome Extension
+# Voice to Text Converter - Chrome Extension
 
 A modern, smooth, and efficient Chrome extension that converts your voice to text in real-time using the Web Speech API. Support for 15+ languages with a beautiful, gradient-based UI.
 
@@ -22,16 +22,16 @@ A modern, smooth, and efficient Chrome extension that converts your voice to tex
 
 ## ✨ Features
 
-- 🎯 **Real-time Voice Recognition** - See your words appear instantly as you speak
-- 🌐 **Multi-language Support** - 15+ languages including English, Spanish, French, German, Arabic, Bengali, Hindi, and more
-- 💾 **Language Preference Memory** - Your selected language is saved automatically
-- 📋 **Quick Copy** - One-click copy to clipboard
-- 🎨 **Modern UI** - Beautiful gradient design with smooth animations
-- 🔄 **Continuous Recording** - Auto-restarts recognition for uninterrupted dictation
-- 📱 **Popup & Overlay Modes** - Use in popup window or floating overlay on any webpage
-- ⚡ **Optimized Performance** - Smooth text streaming without lag
+- **Real-time Voice Recognition** - See your words appear instantly as you speak
+- **Multi-language Support** - 15+ languages including English, Spanish, French, German, Arabic, Bengali, Hindi, and more
+- **Language Preference Memory** - Your selected language is saved automatically
+- **Quick Copy** - One-click copy to clipboard
+- **Modern UI** - Beautiful gradient design with smooth animations
+- **Continuous Recording** - Auto-restarts recognition for uninterrupted dictation
+- **Popup & Overlay Modes** - Use in popup window or floating overlay on any webpage
+- **Optimized Performance** - Smooth text streaming without lag
 
-## 🚀 Installation
+## Installation
 
 ### Option 1: Load Unpacked Extension (Development)
 
@@ -59,7 +59,7 @@ A modern, smooth, and efficient Chrome extension that converts your voice to tex
 
 _Coming soon..._
 
-## 📖 Usage
+## Usage
 
 ### Method 1: Popup Window
 
@@ -84,7 +84,7 @@ _Coming soon..._
 3. A floating display box appears on the page
 4. Click icon again to stop
 
-## 🌍 Supported Languages
+## Supported Languages
 
 | Language             | Code  |
 | -------------------- | ----- |
@@ -106,7 +106,7 @@ _Coming soon..._
 
 _More languages can be added easily!_
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Technologies Used
 
@@ -162,7 +162,7 @@ chrome.storage.local.get(["selectedLanguage"], (result) => {
 });
 ```
 
-## 🎨 UI Customization
+## UI Customization
 
 The extension uses a modern gradient-based design. You can customize colors in `popup.html`:
 
@@ -179,7 +179,7 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 ```
 
-## 🔒 Permissions
+## Permissions
 
 This extension requires the following permissions:
 
@@ -190,13 +190,13 @@ This extension requires the following permissions:
 - `contextMenus` - Add right-click menu option
 - `host_permissions: ["*://*/*"]` - Work on all websites
 
-## 🐛 Known Issues
+## Known Issues
 
 - **Chrome-only**: Uses webkit Speech Recognition (not available in Firefox)
 - **Microphone Permission**: Browser will request microphone access on first use
 - **Restricted Pages**: Cannot run on `chrome://` pages or Chrome Web Store
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -206,7 +206,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 Future Enhancements
+## Future Enhancements
 
 - [ ] Auto-punctuation
 - [ ] Export to file (TXT, DOCX, PDF)
@@ -217,7 +217,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [ ] Timestamp markers
 - [ ] Multiple theme options
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see below for details:
 
@@ -245,18 +245,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## 👨‍💻 Author
+## Author
 
 **Nh Sohan**
 
 - GitHub: [@Nsohan](https://github.com/Nsohan)
 - Email: nhsohan3@gmail.com
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Web Speech API by Google/Chrome
 - Inspired by Google Docs voice typing
 
-## 📞 Support
+## Support
 
 If you encounter any issues or have questions:
 
@@ -266,6 +266,6 @@ If you encounter any issues or have questions:
 
 ---
 
-**⭐ If you find this project useful, please give it a star!**
+** If you find this project useful, please give it a star!**
 
 Made with ❤️ and JavaScript
