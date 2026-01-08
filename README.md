@@ -250,12 +250,10 @@ SOFTWARE.
 **Nh Sohan**
 
 - GitHub: [@Nsohan](https://github.com/Nsohan)
-- Email: your.email@example.com
-
+- Email: nhsohan3@gmail.com
 ## 🙏 Acknowledgments
 
 - Web Speech API by Google/Chrome
-- Icons from [your icon source]
 - Inspired by Google Docs voice typing
 
 ## 📞 Support
