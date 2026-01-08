@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voice to Text Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 460px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 12px 15px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        /* Content Section */
+        .content {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .language-selector label {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        #languageSelect {
+            flex: 1;
+            padding: 6px 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        #languageSelect:hover {
+            border-color: #667eea;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
+        }
+
+        #languageSelect:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        }
+
+        /* Button Groups */
+        .button-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        #startBtn {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+        }
+
+        #startBtn:hover {
+            background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+            box-shadow: 0 3px 10px rgba(76, 175, 80, 0.4);
+        }
+
+        #startBtn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #stopBtn {
+            background: linear-gradient(135deg, #f44336 0%, #da190b 100%);
+            color: white;
+        }
+
+        #stopBtn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #da190b 0%, #c41104 100%);
+            box-shadow: 0 3px 10px rgba(244, 67, 54, 0.4);
+        }
+
+        #stopBtn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #copyBtn {
+            background: linear-gradient(135deg, #2196F3 0%, #0b7dda 100%);
+            color: white;
+        }
+
+        #copyBtn:hover {
+            background: linear-gradient(135deg, #0b7dda 0%, #0968bc 100%);
+            box-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
+        }
+
+        #clearBtn {
+            background: linear-gradient(135deg, #ff9800 0%, #e68900 100%);
+            color: white;
+        }
+
+        #clearBtn:hover {
+            background: linear-gradient(135deg, #e68900 0%, #cc7a00 100%);
+            box-shadow: 0 3px 10px rgba(255, 152, 0, 0.4);
+        }
+
+        /* Text Area */
+        #textArea {
+            width: 100%;
+            flex: 1;
+            max-height: 200px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 13px;
+            resize: none;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        #textArea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.15);
+            background: white;
+        }
+
+        /* Status Bar */
+        #status {
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        #status.listening {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2e7d32;
+            font-weight: 600;
+            border-color: #4CAF50;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        #status.error {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            color: #c62828;
+            font-weight: 600;
+            border-color: #f44336;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(76, 175, 80, 0);
+            }
+        }
+
+        /* Scrollbar Styling */
+        #textArea::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #textArea::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 6px;
+        }
+
+        #textArea::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 6px;
+        }
+
+        #textArea::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Voice to Text</h2>
+            <div class="subtitle">a fun project by <a href="https://nhsohan.xo.je" target="_blank">Sohan</a></div>
+        </div>
+        <div id="status">Ready to record...</div>
+
+        <div class="content">
+            <div class="language-selector">
+                <label for="languageSelect">Language</label>
+                <select id="languageSelect">
+                    <option value="en-US">English (US)</option>
+                    <option value="en-GB">English (UK)</option>
+                    <option value="es-ES">Spanish (Spain)</option>
+                    <option value="es-MX">Spanish (Mexico)</option>
+                    <option value="fr-FR">French</option>
+                    <option value="de-DE">German</option>
+                    <option value="it-IT">Italian</option>
+                    <option value="pt-BR">Portuguese (Brazil)</option>
+                    <option value="ja-JP">Japanese</option>
+                    <option value="ko-KR">Korean</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="ar-SA">Arabic</option>
+                    <option value="ru-RU">Russian</option>
+                    <option value="bn-BD">Bengali (Bangladesh)</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="startBtn">▶ Start Recording</button>
+                <button id="stopBtn" disabled>⏹ Stop Recording</button>
+                <button id="copyBtn">📋 Copy Text</button>
+                <button id="clearBtn">🗑️ Clear</button>
+            </div>
+
+            <textarea id="textArea" placeholder="Your transcribed text will appear here..."></textarea>
+
+
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

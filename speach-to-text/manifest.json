@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Speech to Text Converter",
+    "version": "1.0",
+    "description": "Capture user voice using Web Speech API",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "storage",
+        "contextMenus"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Voice Capture (Click to Start/Stop)"
+    }
+}
